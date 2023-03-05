@@ -7,6 +7,7 @@ const {
     getUsers
 } = require('../controllers/userController');
 
+// leidimu atlikti tam tikras funkcijas patikrinimas
 const { protect } = require('../middleware/authMiddleware');
 const { protectAdmin } = require('../middleware/adminAuthMiddleware');
 

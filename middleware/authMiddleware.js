@@ -6,6 +6,7 @@ const protect = asyncHandler(async (req, res, next) => {
 
   if (status === 200) {
     req.user = response;
+    // tarpinej funkcijoj, jei jau ivykdo viska cia, pasakau, kad eik i kita
     next();
   } else {
     res.send(status, response);

@@ -1,13 +1,25 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
 const {
-    setEvent, getEvents, updateEvent, deleteEvent
-} = require('../controllers/eventController');
+  setEvent,
+  getSpecificEvent,
+  getEvents,
+  updateEvent,
+  deleteEvent,
+} = require("../controllers/eventController");
 
-const { protect } = require('../middleware/authMiddleware');
+// tikrinama ar public ar private access, kokias funkcijas agles daryti tam tikras useris (pgl admin arba simple role)
+const { protect } = require("../middleware/authMiddleware");
 
-router.route('/').get(protect, getEvents).post(protect, setEvent);
-router.route('/:id').put(protect, updateEvent).delete(protect, deleteEvent);
+router
+  .route("/")
+  .get(protect, getEvents)
+  .post(protect, setEvent);
+router
+  .route("/:id")
+  .put(protect, updateEvent)
+  .delete(protect, deleteEvent)
+  .get(protect, getSpecificEvent);
 
 module.exports = router;

@@ -1,30 +1,36 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const eventSchema = mongoose.Schema(
-    {
-        user: {
-            type: mongoose.Types.ObjectId,
-            required: true,
-            ref: 'User'
-        },
-        name: {
-            type: String,
-            required: [true, 'Please add a text']
-        },
-        description: {
-            type: String,
-            required: [true, 'Please add a description']
-        },
-        price: {
-            type: String, 
-            required: [true, 'Please add a price Eur']
-        }
+  {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "User",
     },
-    {
-        timestamps: true
-   }
-)
+    title: {
+      type: String,
+      required: [true, "Please add a title value"],
+    },
+    category: {
+      type: String,
+      required: [true, "Please add a category value"],
+    },
+    place: {
+      type: String,
+      required: [true, "Please add a place"],
+    },
+    time: {
+      type: String,
+      required: [true, "Please add an event time"],
+    },
+    photo: {
+      type: String,
+      required: [true, "Please add a photo URL"],
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 
-// padaryti vietoj price mokamas nemokamas ir jeigu galimybe yra jeigu mokamas tai kokia kaina
-
-module.exports = mongoose.model('Event', eventSchema)
+module.exports = mongoose.model("Event", eventSchema);

@@ -1,15 +1,22 @@
 {
-  "name": "naujas-darbas-renginiai",
+  "name": "city-events",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is the page of \"City events\", this webpage [\"Kas vyksta Kaune\"](https://renginiai.kasvyksta.lt/kaunas) serves as a template.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcinkEve/City-events.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarcinkEve/City-events/issues"
+  },
+  "homepage": "https://github.com/MarcinkEve/City-events#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
